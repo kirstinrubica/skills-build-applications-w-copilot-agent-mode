@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Setup OctoFit Backend",
+            "type": "shell",
+            "command": "python3 -m venv octofit-tracker/backend/venv && source octofit-tracker/backend/venv/bin/activate && pip install -r octofit-tracker/backend/requirements.txt",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+,
+        {
+            "label": "Commit and push to build-octofit-app",
+            "type": "shell",
+            "command": "git checkout build-octofit-app && git add octofit-tracker/ && git commit -m 'Add OctoFit Tracker app structure, virtual environment, and requirements.txt' && git push -u origin build-octofit-app",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}
